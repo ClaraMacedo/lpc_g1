@@ -16,6 +16,24 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from evento.views import inicio,eventoInscricao, eventoId, listaEvento, listaEventoCientifico,  listaPessoa, listaPessoaFisica, listaPessoaJuridica,   pessoaJuridicaId, pessoaFisicaId,   eventoId, eventoCientificoId, pessoaId, listaAutor, listaArtigoCientifico, autorId, artigoCientificoId
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', inicio, name='inicio'),
+    url(r'^eventosInscritos/(?P<id>[0-9]){1}/', eventoInscricao),
+    url(r'^eventos/$', listaEvento, name='listaEvento'),
+    url(r'^eventos/(?P<id>[0-9]){1}/', eventoId),
+    url(r'^eventoCientifico/$', listaEventoCientifico, name='listaEventoCientifico'),
+    url(r'^eventoCientifico/(?P<id>[0-9]){1}/', eventoCientificoId),
+    url(r'^pessoa/$', listaPessoa, name='listaPessoa'),
+    url(r'^pessoa/(?P<id>[0-9]){1}/', pessoaId),
+    url(r'^pessoaFisica/$', listaPessoaFisica, name='listaPessoaFisica'),
+    url(r'^pessoaFisica/(?P<id>[0-9]){1}/', pessoaFisicaId),
+    url(r'^pessoaJuridica/$', listaPessoaJuridica, name='listaPessoaJuridica'),
+    url(r'^pessoaJuridica/(?P<id>[0-9]){1}/', pessoaJuridicaId),
+    url(r'^autor/$', listaAutor, name='listaAutor'),
+    url(r'^autor/(?P<id>[0-9]){1}/', autorId),
+    url(r'^artigoCientifico/$', listaArtigoCientifico, name='listaArtigoCientifico'),
+    url(r'^artigoCientifico/(?P<id>[0-9]){1}/', artigoCientificoId),
 ]
